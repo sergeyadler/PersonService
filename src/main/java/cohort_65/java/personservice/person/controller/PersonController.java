@@ -36,6 +36,11 @@ public class PersonController {
     public PersonDto updatePersonName(@PathVariable Integer id, @PathVariable String name){
         return personService.updatePersonName(id,name);
     }
+    @GetMapping("/name/{name}")
+    public List<PersonDto>  findPersonByName(@PathVariable String name){
+        return personService.findPersonByName(name);
+    }
+
 
     @PutMapping("/{id}/address")
     public PersonDto updatePersonAddress(@PathVariable Integer id, @RequestBody AddressDto addressDto){

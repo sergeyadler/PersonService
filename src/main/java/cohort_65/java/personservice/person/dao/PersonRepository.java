@@ -37,4 +37,5 @@ public interface PersonRepository extends JpaRepository<Person,Integer> {
     Stream<CityPopulationDto> getCityPopulationByCity();
 
 
+    Stream<Person> findAllByName(String name);
 }

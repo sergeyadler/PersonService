@@ -24,4 +24,6 @@ public interface PersonService {
     PersonDto deletePersonById(Integer id);
 
     List<CityPopulationDto>  getCityPopulation();
+
+    List<PersonDto>  findPersonByName(String name);
 }

@@ -90,4 +90,11 @@ public class PersonServiceImpl implements PersonService {
     public List<CityPopulationDto> getCityPopulation() {
         return personRepository.getCityPopulationByCity().map(city -> modelMapper.map(city, CityPopulationDto.class)).collect(Collectors.toList());
     }
+
+    @Override
+    @Transactional
+    public List<PersonDto> findPersonByName(String name) {
+       return personRepository.findAllByName(name).map(person -> modelMapper.map(person, PersonDto.class))
+                .collect(Collectors.toList());
+    }
 }
